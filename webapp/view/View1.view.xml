@@ -1,0 +1,98 @@
+<mvc:View 
+    controllerName="satthi.reddy.project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:table="sap.ui.table"
+    xmlns:core="sap.ui.core">
+    
+   <Page id="_IDGenPage"
+   title="Smart Table Example">
+    <content>
+
+    <smartFilterBar:SmartFilterBar
+        id="smartFilterBar"
+        entitySet="Products"
+        useDateRangeType="true"
+        enableBasicSearch="true"
+        liveMode="true"
+        persistencyKey="SmartFilter_Products"
+        search=".onSearch">
+      </smartFilterBar:SmartFilterBar>
+    
+      <smartTable:SmartTable
+        id="LineItemsSmartTable"
+        smartFilterId="smartFilterBar"
+        entitySet="Products"
+        tableType="Table"                                          
+        header="Products"
+        showRowCount="true"
+        enableAutoBinding="true"                  
+        enableExport="true"
+        beforeExport=".onBeforeExport"
+        useVariantManagement="true"
+        useTablePersonalisation="true"
+        beforeRebindTable=".onBeforeRebindTable"
+        initiallyVisibleFields="ID,Name,Price,Description"
+        showFullScreenButton="true">
+        <Table id="_IDGenTable1">
+							<columns>
+								<Column id="_IDGenColumn1" hAlign="Right">
+									<header>
+										<Text id="_IDGenText3" text="Category"/>
+									</header>
+                                    <customData>
+                <core:CustomData 
+                    key="p13nData" 
+                    value='\{"columnKey": "CategoryName", "leadingProperty": "Category/Name"}' />
+            </customData> 
+
+
+								</Column>
+                                <Column id="_IDGenColumn12" hAlign="Right">
+									<header>
+										<Text id="_IDGenText33" text="Supplier"/>
+									</header>
+                                   
+                                    <customData>
+                <core:CustomData 
+                    key="p13nData" 
+                    value='\{"columnKey": "Supplier", "leadingProperty": "Supplier/Name"}' />
+            </customData>
+
+
+								</Column>
+                 <Column id="_IDGenColumn14" hAlign="Right">
+									
+										<Text id="_IDGenText35" text="SupplierCity"/>
+								
+                                    <customData>
+                <core:CustomData 
+                    key="p13nData" 
+                    value='\{"columnKey": "SupplierCity", "leadingProperty": "Supplier/Address/City"}' />
+            </customData> 
+
+
+								</Column>
+                          
+							</columns>
+							<items>
+
+								<ColumnListItem id="_IDGenColumnListItem">
+									<cells>
+										<Text id="_IDGenText2" text="{Category/Name}"/>	
+                    <Text id="_IDGenText4" text="{Supplier/Name}"/>	
+                    <Text id="_IDGenText5" text="{Supplier/Address/City}"/>	
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+
+      
+
+    </smartTable:SmartTable>
+     
+    </content>
+  </Page>
+</mvc:View>
