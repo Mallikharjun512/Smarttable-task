@@ -94,6 +94,7 @@
     </smartTable:SmartTable>
 
     <Button id="_IDGenButton" text="changed"></Button>
+    <Button id="_IDGenButton1" text="updated"></Button>
      
     </content>
   </Page>
