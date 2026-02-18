@@ -33,6 +33,10 @@
         beforeExport=".onBeforeExport"
         useVariantManagement="true"
         useTablePersonalisation="true"
+        demandPopin="true"
+       displayInline="false"
+       editTogglable="true"
+
         beforeRebindTable=".onBeforeRebindTable"
         initiallyVisibleFields="ID,Name,Price,Description"
         showFullScreenButton="true">

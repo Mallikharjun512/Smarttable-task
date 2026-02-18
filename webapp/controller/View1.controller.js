@@ -30,7 +30,13 @@ sap.ui.define([
             // oBindingParams.parameters.expand = "Category,Supplier";
             // oBindingParams.parameters.select = "ID,Name,Price,Description,DiscontinuedDate,Rating,ReleaseDate,Category/Name,Supplier/Name";
             // oBindingParams.parameters.select = "Products,Category/Name,Supplier/Name";
+        },
+        onEditToggle: function () {
+            var oSmartTable = this.byId("LineItemsSmartTable");
+            var bEditable = oSmartTable.getEditable();
+            oSmartTable.setEditable(!bEditable);
         }
+
     });
 
 });
